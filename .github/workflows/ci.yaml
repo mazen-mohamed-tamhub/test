@@ -55,4 +55,4 @@ jobs:
       # - name: Run Test # running tests
       #   run: python manage.py test
       - name: Run lint # running tests
-        run: flake8 --extend-exclude venv .
+        run: flake8 --extend-exclude venv --max-line=120 .

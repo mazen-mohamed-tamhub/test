@@ -48,4 +48,4 @@ class Command(BaseCommand):
 
         # excute commands
         for command in commands:
-            subprocess.run(command, check=False)
+            subprocess.run(command, check=True) # check=True enforces CI check to fail on error

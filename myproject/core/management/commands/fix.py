@@ -12,7 +12,7 @@ class Command(BaseCommand):
             ["flake8", "--extend-exclude", "venv", "--max-line=120", "."],
         ]
         for command in commands:
-            subprocess.run(command, check=False)
+            subprocess.run(command, check=True)
             # try:
             #     subprocess.run(command, check=True)
             # except subprocess.CalledProcessError as exc:

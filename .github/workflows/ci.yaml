@@ -61,4 +61,5 @@ jobs:
         #run: darker --check --lint "pylint --recursive=y" .
         # run: darker --check --lint "pylint --recursive=y" .
         run: pylint --recursive=y .
+      - name: Run flake
         run: flake8 .

@@ -58,4 +58,4 @@ jobs:
       #   run: flake8 --extend-exclude venv --max-line=120 .
       - name: Run fix # running tests
         #run: python ./myproject/manage.py repair
-        run: darker --lint "pylint --recursive=y" .
+        run: pylint --recursive=y .

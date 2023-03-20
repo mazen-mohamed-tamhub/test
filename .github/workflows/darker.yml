@@ -13,7 +13,7 @@ jobs:
       - name: Run Darker
         uses: akaihola/darker@1.7.0
         with:
-          options: --check --diff --color --config pyproject.toml
+          options: --check --diff --config pyproject.toml
           src: "."
           revision: origin/develop...
           lint: pylint

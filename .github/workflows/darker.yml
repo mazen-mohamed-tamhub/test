@@ -16,3 +16,4 @@ jobs:
           src: "."
           version: "~=1.6.1"
           lint: "flake8"
+      - run: darker

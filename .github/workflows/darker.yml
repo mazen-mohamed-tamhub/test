@@ -23,4 +23,4 @@ jobs:
         with:
           options: --check --diff --color --config pyproject.toml
           src: "."
-          lint: flake8
+          lint: "pylint --recursive=y"

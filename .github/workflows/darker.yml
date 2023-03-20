@@ -13,7 +13,8 @@ jobs:
       - name: Run Darker
         uses: akaihola/darker@1.7.0
         with:
-          options: --check --diff --color --isort --config pyproject.toml
+          options: --check --diff --color --config pyproject.toml
+          src: "."
           revision: origin/develop...
-          lint: flake8
+          lint: pylint
           version: "@baseline-clone-fix"

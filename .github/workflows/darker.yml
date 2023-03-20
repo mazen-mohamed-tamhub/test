@@ -1,6 +1,6 @@
 nam: Linter
 
-on: pull_request
+on: [pull_request, push]
 
 jobs:
   be-lint:

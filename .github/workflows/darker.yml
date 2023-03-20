@@ -1,19 +1,27 @@
-name: Lint
+nam: Linter
 
-on: [push, pull_request]
+on: pull_request
 
 jobs:
-  lint:
+  be-lint:
+    timeout-minutes: 8
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v4
-      - uses: akaihola/darker@1.6.1
+
+      - name: SetUp Python
+        uses: actions/setup-python@v4
         with:
-          options: "--check --diff --color"
+          python-version: "3.x" # Version range or exact version of a Python version to use, using SemVer's version range syntax
+          architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
+
+      - name: Run Darker
+        uses: akaihola/darker@1.6.1
+        with:
+          options: --check --diff --color --config pyproject.toml
           src: "."
-          version: "~=1.6.1"
-          lint: "flake8"
-      - run: darker
+          revision: origin/develop...
+          lint: flake8

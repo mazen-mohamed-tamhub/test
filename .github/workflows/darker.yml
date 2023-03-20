@@ -10,16 +10,10 @@ jobs:
         with:
           fetch-depth: 0
       - uses: actions/setup-python@v4
-      - uses: akaihola/darker@1.7.0
-          with:
-            options: --check --diff --color --config pyproject.toml
-            src: "."
-            revision: origin/develop...
-            lint: pylint
-            version: "@baseline-clone-fix"
-      # - uses: akaihola/darker@1.7.0
-      #   with:
-      #     options: "--check --diff --color"
-      #     src: "."
-      #     version: "~=1.7.0"
-      #     lint: "pylint==2.17.0"
+      - name: Run Darker
+        uses: akaihola/darker@1.7.0
+        with:
+          options: --check --diff --color --isort --config pyproject.toml
+          revision: origin/develop...
+          lint: flake8
+          version: "@baseline-clone-fix"

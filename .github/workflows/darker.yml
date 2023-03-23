@@ -19,7 +19,7 @@ jobs:
           architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
 
       - name: Run Darker
-        uses: akaihola/darker@1.7.0
+        uses: akaihola/darker@1.6.1
         with:
           options: --check --diff --color --config pyproject.toml
           src: "."
